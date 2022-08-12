@@ -1,0 +1,1 @@
+# free5gc_ueransim_snssai_upf_sample_config
