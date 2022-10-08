@@ -9,6 +9,7 @@ This describes a very simple configuration that uses free5GC and UERANSIM to sel
 2. [Select nearby UPF according to the connected gNodeB](https://github.com/s5uishida/free5gc_ueransim_nearby_upf_sample_config)
 3. Select UPF based on S-NSSAI (this article)
 4. [ULCL(Uplink Classifier)](https://github.com/s5uishida/free5gc_ueransim_ulcl_sample_config)
+5. [ULCL with one I-UPF and two PSA-UPFs](https://github.com/s5uishida/free5gc_ueransim_ulcl_2_sample_config)
 
 ---
 
