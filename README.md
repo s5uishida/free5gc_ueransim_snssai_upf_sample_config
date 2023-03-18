@@ -1273,5 +1273,5 @@ I was able to confirm the very simple configuration in which one UE connects to 
 
 <h2 id="changelog">Changelog (summary)</h2>
 
-- [2023.03.17] Updated to free5GC v3.2.1 (2023.02.12) and latest UERANSIM that supports Routing Indicator settings. This allows one UE to use multiple S-NSSAIs at the same time.
+- [2023.03.17] Updated to free5GC v3.2.1 (2023.02.12) and UERANSIM v3.2.6 (2023.03.17).
 - [2022.08.12] Initial release.
