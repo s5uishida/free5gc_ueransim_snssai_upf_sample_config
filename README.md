@@ -28,8 +28,8 @@ This describes a very simple configuration that uses free5GC and UERANSIM to sel
   - [Changes in configuration files of free5GC 5GC U-Plane2](#changes_up2)
   - [Changes in configuration files of UERANSIM UE / RAN](#changes_ueransim)
     - [Changes in configuration files of RAN (gNodeB)](#changes_ran)
-    - [Changes in configuration files of UE set to SST:1 and SD:0x000001 (IMSI-001010000000000)](#changes_ue_sd1)
-    - [Changes in configuration files of UE set to SST:1 and SD:0x000002 (IMSI-001010000000000)](#changes_ue_sd2)
+    - [Changes in configuration files of UE[SST:1, SD:0x000001] (IMSI-001010000000000)](#changes_ue_sd1)
+    - [Changes in configuration files of UE[SST:1, SD:0x000002] (IMSI-001010000000000)](#changes_ue_sd2)
 - [Network settings of free5GC 5GC and UERANSIM UE / RAN](#network_settings)
   - [Network settings of free5GC 5GC C-Plane](#network_settings_cp)
   - [Network settings of free5GC 5GC U-Plane1](#network_settings_up1)
@@ -531,7 +531,7 @@ logger:
  ignoreStreamIds: true
 ```
 
-<h4 id="changes_ue_sd1">Changes in configuration files of UE set to SST:1 and SD:0x000001 (IMSI-001010000000000)</h4>
+<h4 id="changes_ue_sd1">Changes in configuration files of UE[SST:1, SD:0x000001] (IMSI-001010000000000)</h4>
 
 - `UERANSIM/config/free5gc-ue-sd1.yaml`
 ```diff
@@ -585,7 +585,7 @@ logger:
  integrity:
 ```
 
-<h4 id="changes_ue_sd2">Changes in configuration files of UE set to SST:1 and SD:0x000002 (IMSI-001010000000000)</h4>
+<h4 id="changes_ue_sd2">Changes in configuration files of UE[SST:1, SD:0x000002] (IMSI-001010000000000)</h4>
 
 - `UERANSIM/config/free5gc-ue-sd2.yaml`
 ```diff
