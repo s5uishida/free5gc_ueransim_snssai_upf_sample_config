@@ -95,7 +95,7 @@ Each DNs are as follows.
 | DN | S-NSSAI |  TUNnel interface of DN | DNN | TUNnel interface of UE | U-Plane # |
 | --- | --- | --- | --- | --- | --- |
 | 10.60.0.0/16 | SST:1 <br> SD:0x000001 | upfgtp | internet | uesimtun0 | U-Plane1 |
-| 10.61.0.0/16 | SST:1 <br> SD:0x000002 | upfgtp | internet | uesimtun1 | U-Plane2 |
+| 10.61.0.0/16 | SST:1 <br> SD:0x000002 | upfgtp | internet | uesimtun0 | U-Plane2 |
 
 <h2 id="changes">Changes in configuration files of free5GC 5GC and UERANSIM UE / RAN</h2>
 
@@ -1250,7 +1250,7 @@ The TUNnel interface `uesimtun0` is created as follows.
 
 Confirm by using `tcpdump` that the packet goes through `if=upfgtp` on U-Plane2.
 ```
-# ping google.com -I uesimtun1 -n
+# ping google.com -I uesimtun0 -n
 PING google.com (142.250.199.110) from 10.61.0.1 uesimtun0: 56(84) bytes of data.
 64 bytes from 142.250.199.110: icmp_seq=1 ttl=61 time=26.7 ms
 64 bytes from 142.250.199.110: icmp_seq=2 ttl=61 time=30.6 ms
