@@ -3,7 +3,9 @@ This describes a very simple configuration that uses free5GC and UERANSIM to sel
 
 ---
 
-<h2 id="conf_list">List of Sample Configurations</h2>
+<a id="conf_list"></a>
+
+## List of Sample Configurations
 
 1. [One SMF, one UPF and one DNN](https://github.com/s5uishida/free5gc_srsran_sample_config)
 2. [One SMF, Multiple UPFs and DNNs](https://github.com/s5uishida/free5gc_ueransim_sample_config)
@@ -15,7 +17,9 @@ This describes a very simple configuration that uses free5GC and UERANSIM to sel
 
 ---
 
-<h2 id="misc">Miscellaneous Notes</h2>
+<a id="misc"></a>
+
+## Miscellaneous Notes
 
 - [Install MongoDB 6.0 and free5GC WebUI](https://github.com/s5uishida/free5gc_install_mongodb6_webui)
 - [Install MongoDB 4.4.18 on Ubuntu 20.04 for Raspberry Pi 4B](https://github.com/s5uishida/install_mongodb_on_ubuntu_for_rp4b)
@@ -24,7 +28,9 @@ This describes a very simple configuration that uses free5GC and UERANSIM to sel
 
 ---
 
-<h2 id="toc">Table of Contents</h2>
+<a id="toc"></a>
+
+## Table of Contents
 
 - [Overview of free5GC 5GC Simulation Mobile Network](#overview)
 - [Changes in configuration files of free5GC 5GC and UERANSIM UE / RAN](#changes)
@@ -53,7 +59,9 @@ This describes a very simple configuration that uses free5GC and UERANSIM to sel
 - [Changelog (summary)](#changelog)
 
 ---
-<h2 id="overview">Overview of free5GC 5GC Simulation Mobile Network</h2>
+<a id="overview"></a>
+
+## Overview of free5GC 5GC Simulation Mobile Network
 
 The following minimum configuration was set as a condition.
 - The UE selects a pair of SMF and UPF based on S-NSSAI.
@@ -102,13 +110,17 @@ Each DNs are as follows.
 | 10.60.0.0/16 | SST:1 <br> SD:0x000001 | upfgtp | internet | uesimtun0 | U-Plane1 |
 | 10.61.0.0/16 | SST:1 <br> SD:0x000002 | upfgtp | internet | uesimtun0 | U-Plane2 |
 
-<h2 id="changes">Changes in configuration files of free5GC 5GC and UERANSIM UE / RAN</h2>
+<a id="changes"></a>
+
+## Changes in configuration files of free5GC 5GC and UERANSIM UE / RAN
 
 Please refer to the following for building free5GC and UERANSIM respectively.
 - free5GC v3.2.1 (2023.02.12) - https://github.com/free5gc/free5gc/wiki/Installation
 - UERANSIM v3.2.6 (2023.03.17) - https://github.com/aligungr/UERANSIM/wiki/Installation
 
-<h3 id="changes_cp">Changes in configuration files of free5GC 5GC C-Plane</h3>
+<a id="changes_cp"></a>
+
+### Changes in configuration files of free5GC 5GC C-Plane
 
 - `free5gc/config/amfcfg.yaml`
 ```diff
@@ -418,7 +430,9 @@ logger:
     ReportCaller: false
 ```
 
-<h3 id="changes_up1">Changes in configuration files of free5GC 5GC U-Plane1</h3>
+<a id="changes_up1"></a>
+
+### Changes in configuration files of free5GC 5GC U-Plane1
 
 - `free5gc/config/upfcfg.yaml`
 ```diff
@@ -455,7 +469,9 @@ logger:
  logger: # log output setting
 ```
 
-<h3 id="changes_up2">Changes in configuration files of free5GC 5GC U-Plane2</h3>
+<a id="changes_up2"></a>
+
+### Changes in configuration files of free5GC 5GC U-Plane2
 
 - `free5gc/config/upfcfg.yaml`
 ```diff
@@ -492,9 +508,13 @@ logger:
  logger: # log output setting
 ```
 
-<h3 id="changes_ueransim">Changes in configuration files of UERANSIM UE / RAN</h3>
+<a id="changes_ueransim"></a>
 
-<h4 id="changes_ran">Changes in configuration files of RAN (gNodeB)</h4>
+### Changes in configuration files of UERANSIM UE / RAN
+
+<a id="changes_ran"></a>
+
+#### Changes in configuration files of RAN (gNodeB)
 
 - `UERANSIM/config/free5gc-gnb.yaml`
 ```diff
@@ -536,7 +556,9 @@ logger:
  ignoreStreamIds: true
 ```
 
-<h4 id="changes_ue_sd1">Changes in configuration files of UE[SST:1, SD:0x000001] (IMSI-001010000000000)</h4>
+<a id="changes_ue_sd1"></a>
+
+#### Changes in configuration files of UE[SST:1, SD:0x000001] (IMSI-001010000000000)
 
 - `UERANSIM/config/free5gc-ue-sd1.yaml`
 ```diff
@@ -590,7 +612,9 @@ logger:
  integrity:
 ```
 
-<h4 id="changes_ue_sd2">Changes in configuration files of UE[SST:1, SD:0x000002] (IMSI-001010000000000)</h4>
+<a id="changes_ue_sd2"></a>
+
+#### Changes in configuration files of UE[SST:1, SD:0x000002] (IMSI-001010000000000)
 
 - `UERANSIM/config/free5gc-ue-sd2.yaml`
 ```diff
@@ -644,9 +668,13 @@ logger:
  integrity:
 ```
 
-<h2 id="network_settings">Network settings of free5GC 5GC and UERANSIM UE / RAN</h2>
+<a id="network_settings"></a>
 
-<h3 id="network_settings_cp">Network settings of free5GC 5GC C-Plane</h3>
+## Network settings of free5GC 5GC and UERANSIM UE / RAN
+
+<a id="network_settings_cp"></a>
+
+### Network settings of free5GC 5GC C-Plane
 
 Add IP addresses for SMF1 and SMF2.
 ```
@@ -656,7 +684,9 @@ ip addr add 192.168.0.143/24 dev enp0s8
 **Note. `enp0s8` is the network interface of `192.168.0.0/24` in my VirtualBox environment.
 Please change it according to your environment.**
 
-<h3 id="network_settings_up1">Network settings of free5GC 5GC U-Plane1</h3>
+<a id="network_settings_up1"></a>
+
+### Network settings of free5GC 5GC U-Plane1
 
 First, uncomment the next line in the `/etc/sysctl.conf` file and reflect it in the OS.
 ```
@@ -670,7 +700,9 @@ Next, configure NAPT.
 # iptables -t nat -A POSTROUTING -s 10.60.0.0/16 ! -o upfgtp -j MASQUERADE
 ```
 
-<h3 id="network_settings_up2">Network settings of free5GC 5GC U-Plane2</h3>
+<a id="network_settings_up2"></a>
+
+### Network settings of free5GC 5GC U-Plane2
 
 First, uncomment the next line in the `/etc/sysctl.conf` file and reflect it in the OS.
 ```
@@ -684,7 +716,9 @@ Next, configure NAPT.
 # iptables -t nat -A POSTROUTING -s 10.61.0.0/16 ! -o upfgtp -j MASQUERADE
 ```
 
-<h2 id="build">Build free5GC and UERANSIM</h2>
+<a id="build"></a>
+
+## Build free5GC and UERANSIM
 
 **Note. It is recommended to use go1.18.x according to the commit to free5gc/openapi on 2022.10.26.**
 
@@ -715,11 +749,15 @@ cd ..
 git checkout main
 ```
 
-<h2 id="run">Run free5GC 5GC and UERANSIM UE / RAN</h2>
+<a id="run"></a>
+
+## Run free5GC 5GC and UERANSIM UE / RAN
 
 First run the 5GC, then UERANSIM (UE & RAN implementation).
 
-<h3 id="run_up">Run free5GC 5GC U-Plane1 & U-Plane2</h3>
+<a id="run_up"></a>
+
+### Run free5GC 5GC U-Plane1 & U-Plane2
 
 First, run free5GC 5GC U-Planes. Please see [here](https://github.com/free5gc/free5gc/issues/170#issuecomment-773214169) for the reason.  
 **Note. It was improved on 2022.11.08, and you don't have to worry about the startup order of C-Plane and U-Plane.**
@@ -748,7 +786,9 @@ tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on upfgtp, link-type RAW (Raw IP), capture size 262144 bytes
 ```
 
-<h3 id="run_cp">Run free5GC 5GC C-Plane</h3>
+<a id="run_cp"></a>
+
+### Run free5GC 5GC C-Plane
 
 Next, run free5GC 5GC C-Plane.
 
@@ -794,7 +834,9 @@ trap terminate SIGINT
 wait ${PID_LIST}
 ```
 
-<h3 id="run_ran">Run UERANSIM (gNodeB)</h3>
+<a id="run_ran"></a>
+
+### Run UERANSIM (gNodeB)
 
 Please refer to the following for usage of UERANSIM.
 
@@ -818,11 +860,15 @@ The free5GC C-Plane log when executed is as follows.
 2023-03-18T19:25:17.740052244+09:00 [INFO][AMF][NGAP][192.168.0.131:50228] Send NG-Setup response
 ```
 
-<h3 id="run_sd1">Run UERANSIM (UE[SST:1, SD:0x000001])</h3>
+<a id="run_sd1"></a>
+
+### Run UERANSIM (UE[SST:1, SD:0x000001])
 
 Confirm that the packet goes through the DN of U-Plane1 based on SST:1 and SD:0x000001.
 
-<h4 id="con_sd1">UE connects to U-Plane1 based on SST:1 and SD:0x000001</h4>
+<a id="con_sd1"></a>
+
+#### UE connects to U-Plane1 based on SST:1 and SD:0x000001
 
 ```
 # ./nr-ue -c ../config/free5gc-ue-sd1.yaml 
@@ -1029,7 +1075,9 @@ The TUNnel interface `uesimtun0` is created as follows.
 ...
 ```
 
-<h4 id="ping_sd1">Ping google.com going through DN=10.60.0.0/16 on U-Plane1</h4>
+<a id="ping_sd1"></a>
+
+#### Ping google.com going through DN=10.60.0.0/16 on U-Plane1
 
 Confirm by using `tcpdump` that the packet goes through `if=upfgtp` on U-Plane1.
 ```
@@ -1050,12 +1098,16 @@ The `tcpdump` log on U-Plane1 is as follows.
 ```
 **Note. Make sure the packet does not go through U-Plane2.**
 
-<h3 id="run_sd2">Run UERANSIM (UE[SST:1, SD:0x000002])</h3>
+<a id="run_sd2"></a>
+
+### Run UERANSIM (UE[SST:1, SD:0x000002])
 
 Then the UE disconnects from gNodeB and connects to gNodeB using the configuration file for SST:1 and SD:0x000002.
 Confirm that the packet goes through the DN of U-Plane2 based on SST:1 and SD:0x000002.
 
-<h4 id="con_sd2">UE connects to U-Plane2 based on SST:1 and SD:0x000002</h4>
+<a id="con_sd2"></a>
+
+#### UE connects to U-Plane2 based on SST:1 and SD:0x000002
 
 ```
 # ./nr-ue -c ../config/free5gc-ue-sd2.yaml 
@@ -1251,7 +1303,9 @@ The TUNnel interface `uesimtun0` is created as follows.
 ...
 ```
 
-<h4 id="ping_sd2">Ping google.com going through DN=10.61.0.0/16 on U-Plane2</h4>
+<a id="ping_sd2"></a>
+
+#### Ping google.com going through DN=10.61.0.0/16 on U-Plane2
 
 Confirm by using `tcpdump` that the packet goes through `if=upfgtp` on U-Plane2.
 ```
@@ -1275,7 +1329,9 @@ The `tcpdump` log on U-Plane2 is as follows.
 ---
 I was able to confirm the very simple configuration in which one UE connects to the UPF based on S-NSSAI. I would like to thank the excellent developers and all the contributors of free5GC and UERANSIM.
 
-<h2 id="changelog">Changelog (summary)</h2>
+<a id="changelog"></a>
+
+## Changelog (summary)
 
 - [2023.03.18] Updated to free5GC v3.2.1 (2023.02.12) and UERANSIM v3.2.6 (2023.03.17).
 - [2022.08.12] Initial release.
